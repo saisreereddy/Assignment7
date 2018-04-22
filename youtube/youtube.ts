@@ -127,10 +127,10 @@ let tags=["Animals","Dogs","Love","Funny","DogsandPals","Delight_pets","Dogscorn
 let youtube1 = new Youtube("The tales of Bolt",500,300,200,"Auto 360p",500,true,true,"created by saisree",tags,"Viewer",true,"Standard Youtube Lessons",true,17,"English");
 console.log(youtube1.getTitle());
 console.log("Your video has " +youtube1.getNoOfViews() + " views");
-console.log(youtube1.getNoOfLikes());
-console.log(youtube1.getNoOfDisikes());
-console.log(youtube1.getQuality());
-console.log(youtube1.getNoOfComments());
+console.log("Your video is liked by "+youtube1.getNoOfLikes()+" people");
+console.log("Your video is disliked by" +youtube1.getNoOfDisikes()+" people");
+console.log("Quality standards "+youtube1.getQuality());
+console.log("Your video has "+youtube1.getNoOfComments()+" comments");
 console.log(youtube1.hasAutoPlayOption());
 console.log(youtube1.hasSharingOption());
 console.log(youtube1.getInformation());
