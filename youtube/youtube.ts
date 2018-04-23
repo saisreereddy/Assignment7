@@ -1,3 +1,4 @@
+
 class Youtube {
     public title:String;
     public views:Number;
@@ -6,7 +7,7 @@ class Youtube {
     public quality:String;
     public noOfComments:Number;
     public autoPlayOption:Boolean;
-    public canShare:Boolean;
+    public privacy:String;
     public description:String;
     public tags:String[];
     public category:String;
@@ -16,7 +17,7 @@ class Youtube {
     private ageRestriction:number;
     public language:String;  
 
-    constructor(title: String,views:Number,likes:Number,dislikes:Number,quality:String,noOfComments:Number,autoPlayOption:Boolean,canShare:Boolean,descrition:String,tags:String[],category:String,allowComments:Boolean,licenseAndCopyRights:String,allowEmbedding:Boolean,ageRestriction:number,language:String) {
+    constructor(title: String,views:Number,likes:Number,dislikes:Number,quality:String,noOfComments:Number,autoPlayOption:Boolean,privacy:String,descrition:String,tags:String[],category:String,allowComments:Boolean,licenseAndCopyRights:String,allowEmbedding:Boolean,ageRestriction:number,language:String) {
 
 
         this.title=title;
@@ -26,7 +27,7 @@ class Youtube {
         this.quality=quality;
         this.noOfComments=noOfComments;
         this.autoPlayOption=autoPlayOption;
-        this.canShare=canShare;
+        this.privacy=privacy;
         this.description=descrition;
         this.tags=tags;
         this.category=category;
@@ -66,9 +67,9 @@ getNoOfViews=()=>{
                 
                     return this.autoPlayOption;
                  }
-                 hasSharingOption=()=>{
+                 pricavyListed=()=>{
                     
-                        return this.canShare;
+                        return this.privacy;
                      }
                      getInformation=()=>{
                         
@@ -87,8 +88,10 @@ hasSubscription=()=>{
 
 getTags=()=>{
 
+console.log("Tags listed for the following video");
+    let result= this.tags.join('#');
+return result;
 
-    return this.tags.join('#');
 }
 
 
@@ -124,23 +127,23 @@ getLanguage=()=>{
 
 }
 let tags=["Animals","Dogs","Love","Funny","DogsandPals","Delight_pets","Dogscorner"]
-let youtube1 = new Youtube("The tales of Bolt",500,300,200,"Auto 360p",500,true,true,"created by saisree",tags,"Viewer",true,"Standard Youtube Lessons",true,17,"English");
+let youtube1 = new Youtube("The tales of Bolt",500,300,200,"Auto 360p",500,true,"public","created by saisree",tags,"Viewer",true,"Standard Youtube Lessons",true,17,"English");
 console.log(youtube1.getTitle());
 console.log("Your video has " +youtube1.getNoOfViews() + " views");
 console.log("Your video is liked by "+youtube1.getNoOfLikes()+" people");
-console.log("Your video is disliked by" +youtube1.getNoOfDisikes()+" people");
-console.log("Quality standards "+youtube1.getQuality());
+console.log("Your video is disliked by " +youtube1.getNoOfDisikes()+" people");
+console.log("Quality standards as of  this year "+youtube1.getQuality());
 console.log("Your video has "+youtube1.getNoOfComments()+" comments");
-console.log(youtube1.hasAutoPlayOption());
-console.log(youtube1.hasSharingOption());
-console.log(youtube1.getInformation());
+console.log("Auto play option - "+youtube1.hasAutoPlayOption());
+console.log("Privacy Listed as - "+youtube1.pricavyListed());
+console.log("Info - "+youtube1.getInformation());
 console.log(youtube1.getRealtedVideos());
-console.log(youtube1.hasSubscription());
+console.log("Subscription - "+youtube1.hasSubscription());
 console.log(youtube1.getTags());
-console.log(youtube1.getCategory());
-console.log(youtube1.willAllowComments());
-console.log(youtube1.willAllowEmbedding());
-console.log(youtube1.getLicenseAndCopyRights());
+console.log("Category - "+youtube1.getCategory());
+console.log("Allows Comments - "+youtube1.willAllowComments());
+console.log("Allows Embedding - "+youtube1.willAllowEmbedding());
+console.log("License and Copyrights - "+youtube1.getLicenseAndCopyRights());
 console.log(youtube1.ageRequiredToWatch());
-console.log(youtube1.getLanguage());
+console.log("Language - "+youtube1.getLanguage());
 

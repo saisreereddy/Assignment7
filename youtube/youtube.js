@@ -1,5 +1,5 @@
 var Youtube = /** @class */ (function () {
-    function Youtube(title, views, likes, dislikes, quality, noOfComments, autoPlayOption, canShare, descrition, tags, category, allowComments, licenseAndCopyRights, allowEmbedding, ageRestriction, language) {
+    function Youtube(title, views, likes, dislikes, quality, noOfComments, autoPlayOption, privacy, descrition, tags, category, allowComments, licenseAndCopyRights, allowEmbedding, ageRestriction, language) {
         var _this = this;
         this.getTitle = function () {
             return _this.title;
@@ -22,8 +22,8 @@ var Youtube = /** @class */ (function () {
         this.hasAutoPlayOption = function () {
             return _this.autoPlayOption;
         };
-        this.hasSharingOption = function () {
-            return _this.canShare;
+        this.pricavyListed = function () {
+            return _this.privacy;
         };
         this.getInformation = function () {
             return _this.description;
@@ -35,7 +35,9 @@ var Youtube = /** @class */ (function () {
             return "subscribed";
         };
         this.getTags = function () {
-            return _this.tags.join('#');
+            console.log("Tags listed for the following video");
+            var result = _this.tags.join('#');
+            return result;
         };
         this.getCategory = function () {
             return _this.category;
@@ -67,7 +69,7 @@ var Youtube = /** @class */ (function () {
         this.quality = quality;
         this.noOfComments = noOfComments;
         this.autoPlayOption = autoPlayOption;
-        this.canShare = canShare;
+        this.privacy = privacy;
         this.description = descrition;
         this.tags = tags;
         this.category = category;
@@ -80,22 +82,22 @@ var Youtube = /** @class */ (function () {
     return Youtube;
 }());
 var tags = ["Animals", "Dogs", "Love", "Funny", "DogsandPals", "Delight_pets", "Dogscorner"];
-var youtube1 = new Youtube("The tales of Bolt", 500, 300, 200, "Auto 360p", 500, true, true, "created by saisree", tags, "Viewer", true, "Standard Youtube Lessons", true, 17, "English");
+var youtube1 = new Youtube("The tales of Bolt", 500, 300, 200, "Auto 360p", 500, true, "public", "created by saisree", tags, "Viewer", true, "Standard Youtube Lessons", true, 17, "English");
 console.log(youtube1.getTitle());
 console.log("Your video has " + youtube1.getNoOfViews() + " views");
 console.log("Your video is liked by " + youtube1.getNoOfLikes() + " people");
-console.log("Your video is disliked by" + youtube1.getNoOfDisikes() + " people");
-console.log("Quality standards " + youtube1.getQuality());
+console.log("Your video is disliked by " + youtube1.getNoOfDisikes() + " people");
+console.log("Quality standards as of  this year " + youtube1.getQuality());
 console.log("Your video has " + youtube1.getNoOfComments() + " comments");
-console.log(youtube1.hasAutoPlayOption());
-console.log(youtube1.hasSharingOption());
-console.log(youtube1.getInformation());
+console.log("Auto play option - " + youtube1.hasAutoPlayOption());
+console.log("Privacy Listed as - " + youtube1.pricavyListed());
+console.log("Info - " + youtube1.getInformation());
 console.log(youtube1.getRealtedVideos());
-console.log(youtube1.hasSubscription());
+console.log("Subscription - " + youtube1.hasSubscription());
 console.log(youtube1.getTags());
-console.log(youtube1.getCategory());
-console.log(youtube1.willAllowComments());
-console.log(youtube1.willAllowEmbedding());
-console.log(youtube1.getLicenseAndCopyRights());
+console.log("Category - " + youtube1.getCategory());
+console.log("Allows Comments - " + youtube1.willAllowComments());
+console.log("Allows Embedding - " + youtube1.willAllowEmbedding());
+console.log("License and Copyrights - " + youtube1.getLicenseAndCopyRights());
 console.log(youtube1.ageRequiredToWatch());
-console.log(youtube1.getLanguage());
+console.log("Language - " + youtube1.getLanguage());
